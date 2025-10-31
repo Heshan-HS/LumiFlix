@@ -35,13 +35,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Setup event listeners
         setupEventListeners();
         
-        // Auto-trigger Home button click on initial load (ensures data displays)
+        // Auto-trigger displayAllMovies on initial load (ensures data displays)
         setTimeout(() => {
-            const homeButton = document.querySelector('.nav-menu a[href="index.html"]');
-            if (homeButton && window.location.pathname.endsWith('index.html')) {
-                console.log('🏠 Auto-clicking Home button to ensure data loads...');
-                homeButton.click();
+            console.log('🏠 Auto-loading movies on page load...');
+            
+            // Show hero section
+            const heroSection = document.getElementById('hero-section');
+            if (heroSection) {
+                heroSection.classList.remove('hero-hidden');
             }
+            
+            // Display all movies directly
+            displayAllMovies();
+            
+            console.log('✅ Movies auto-loaded successfully!');
         }, 500); // Small delay to ensure everything is initialized
     } catch (error) {
         console.error('❌ Error loading movies:', error);
