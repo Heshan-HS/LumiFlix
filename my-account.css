@@ -1,0 +1,258 @@
+/* My Account Page - Professional Design */
+
+/* Hide Search Bar on My Account Page */
+header {
+    display: none !important;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 3rem 2rem 1rem 2rem;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+    width: calc(100% - 4rem);
+    text-align: left;
+}
+
+/* Account Container */
+.account-container {
+    padding: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Account Cards */
+.account-card {
+    background: linear-gradient(135deg, rgba(26, 28, 47, 0.98), rgba(15, 17, 30, 0.98));
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(170, 0, 255, 0.15);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(170, 0, 255, 0.3);
+    border-color: rgba(170, 0, 255, 0.3);
+}
+
+.account-card-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(170, 0, 255, 0.1), rgba(0, 170, 255, 0.05));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.account-card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.account-card-content {
+    padding: 2rem 1.5rem;
+}
+
+/* Profile Card */
+.profile-card .account-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(170, 0, 255, 0.4);
+}
+
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Stats Card */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(170, 0, 255, 0.05);
+    border-color: rgba(170, 0, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.favorites {
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.2), rgba(255, 71, 87, 0.1));
+    color: #ff4757;
+}
+
+.stat-icon.watchlist {
+    background: linear-gradient(135deg, rgba(255, 165, 2, 0.2), rgba(255, 165, 2, 0.1));
+    color: #ffa502;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+/* Actions Card */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.action-btn {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.action-btn i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, rgba(170, 0, 255, 0.1), rgba(0, 170, 255, 0.05));
+    border-color: rgba(170, 0, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(170, 0, 255, 0.2);
+}
+
+.action-btn:hover i {
+    transform: scale(1.1);
+}
+
+.logout-btn {
+    background: rgba(255, 71, 87, 0.05);
+    border-color: rgba(255, 71, 87, 0.2);
+}
+
+.logout-btn i {
+    color: #ff4757;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 71, 87, 0.1);
+    border-color: rgba(255, 71, 87, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .account-container {
+        grid-template-columns: 1fr;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .stats-grid,
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        padding: 2rem 1rem 1rem;
+    }
+}

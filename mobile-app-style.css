@@ -1,0 +1,419 @@
+/* ==================== MOBILE APP STYLE - MOBILE WEB VIEW ONLY ==================== */
+/* This CSS applies ONLY to mobile devices (max-width: 768px) */
+/* Desktop view remains unchanged */
+
+/* Hide mobile elements on desktop by default */
+.mobile-top-bar,
+.mobile-search-container {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    /* Show mobile elements on mobile only */
+    .mobile-top-bar,
+    .mobile-search-container {
+        display: block !important;
+    }
+    /* ===== BODY & CONTAINER ===== */
+    body {
+        background-color: #0d0c22 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* ===== HIDE DESKTOP NAVBAR & SEARCH ===== */
+    .sidebar {
+        display: none !important;
+    }
+    
+    header {
+        display: none !important;
+    }
+    
+    .hamburger-menu {
+        display: none !important;
+    }
+    
+    /* ===== MOBILE TOP BAR (Logo + Genre Dropdown) ===== */
+    .mobile-top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(13, 12, 34, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 12px 16px;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        z-index: 1002;
+        border-bottom: none;
+        height: 60px;
+        box-sizing: border-box;
+    }
+    
+    .mobile-logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        flex-shrink: 0 !important;
+        flex: 0 0 auto !important;
+        max-width: 60% !important;
+        width: auto !important;
+    }
+    
+    .mobile-logo img {
+        width: 40px;
+        height: auto;
+    }
+    
+    .mobile-logo-text {
+        font-size: 1.3rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #00aaff, #aa00ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .mobile-genre-selector {
+        background: rgba(26, 25, 54, 0.8);
+        border: 1px solid rgba(170, 0, 255, 0.3);
+        border-radius: 20px;
+        padding: 8px 16px;
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        min-width: 70px !important;
+        max-width: 100px !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        flex: 0 0 auto !important;
+        margin-left: auto !important;
+    }
+    
+    .mobile-genre-selector span {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-genre-selector i {
+        font-size: 0.7rem;
+        margin-left: 4px;
+    }
+    
+    /* ===== MOBILE SEARCH BAR ===== */
+    .mobile-search-container {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 8px 16px 12px 16px;
+        background: rgba(13, 12, 34, 0.95);
+        backdrop-filter: blur(20px);
+        z-index: 1001;
+        border-bottom: none;
+        height: auto;
+        box-sizing: border-box;
+    }
+    
+    .mobile-search-bar {
+        width: 100%;
+        background: rgba(26, 25, 54, 0.8);
+        border: 1px solid rgba(170, 0, 255, 0.3);
+        border-radius: 25px;
+        padding: 12px 20px 12px 45px;
+        color: #ffffff;
+        font-size: 0.95rem;
+        position: relative;
+    }
+    
+    .mobile-search-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #00aaff;
+        font-size: 1.1rem;
+    }
+    
+    /* ===== MAIN CONTENT AREA ===== */
+    .main-content {
+        margin-top: 120px !important;
+        padding: 0 4px 80px 4px !important;
+    }
+    
+    /* ===== HERO SECTION (MOBILE) ===== */
+    .hero-section {
+        margin-bottom: 16px !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        height: 320px !important;
+        max-height: 320px !important;
+        min-height: 320px !important;
+        position: relative !important;
+    }
+    
+    .hero-section .background-image-container img {
+        object-fit: cover !important;
+        height: 100% !important;
+    }
+    
+    .hero-content {
+        padding: 0 !important;
+        justify-content: flex-end !important;
+        position: relative !important;
+        height: 100% !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem !important;
+        margin-bottom: 8px !important;
+        display: none !important; /* Hide title on mobile hero */
+    }
+    
+    .hero-description {
+        display: none !important; /* Hide description on mobile */
+    }
+    
+    .hero-meta-info {
+        display: none !important; /* Hide meta on mobile */
+    }
+    
+    .hero-buttons {
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        position: absolute !important;
+        bottom: 16px !important;
+        left: 16px !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: auto !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+    }
+    
+    .hero-buttons .btn {
+        padding: 8px 16px !important;
+        font-size: 0.8rem !important;
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+        flex: 0 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        white-space: nowrap !important;
+        min-width: auto !important;
+        width: auto !important;
+    }
+    
+    .hero-buttons .btn-primary {
+        background: #00aaff !important;
+    }
+    
+    .hero-buttons .btn-secondary {
+        background: rgba(255, 255, 255, 0.2) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    
+    /* ===== MOVIES SECTION (MOBILE) ===== */
+    .movies-section {
+        margin-bottom: 1rem !important;
+        padding: 0 !important;
+    }
+    
+    /* ===== FEATURED MOVIES - DISABLE AUTO-SCROLL ON MOBILE ===== */
+    #featured-movies-grid.movie-grid {
+        animation: none !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4px !important;
+        width: 100% !important;
+    }
+    
+    .scrolling-wrapper {
+        overflow: visible !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+    
+    /* ===== SECTION TITLES (MOBILE) ===== */
+    .movies-section h2,
+    .section-header {
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        color: #ffffff !important;
+        margin: 16px 0 10px 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    
+    .movies-section h2::before,
+    .section-header::before {
+        content: '●' !important;
+        color: #aa00ff !important;
+        font-size: 1.2rem !important;
+    }
+    
+    /* ===== MOVIE GRID (3 COLUMNS ON MOBILE) ===== */
+    .movie-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 4px !important;
+        padding: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Force 3 columns on all mobile sizes */
+    @media (max-width: 768px) {
+        .movie-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .movie-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 4px !important;
+        }
+    }
+    
+    /* ===== MOVIE CARDS (MOBILE) ===== */
+    .movie-card {
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        background: rgba(26, 25, 54, 0.6) !important;
+        border: 1px solid rgba(170, 0, 255, 0.15) !important;
+        position: relative !important;
+        aspect-ratio: 2/3 !important;
+        height: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .movie-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .card-overlay {
+        padding: 8px !important;
+    }
+    
+    /* ===== RATING BADGE (TOP-RIGHT) ===== */
+    .movie-card .rating-badge {
+        position: absolute !important;
+        top: 8px !important;
+        right: 8px !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 4px 8px !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        font-size: 0.75rem !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+    }
+    
+    .movie-card .rating-badge i {
+        color: #ffd700 !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* ===== ACTION ICONS (BOOKMARK + HEART) ===== */
+    .card-action-icons {
+        position: absolute !important;
+        top: 8px !important;
+        left: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+    
+    .card-icon-btn {
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        background: rgba(0, 0, 0, 0.7) !important;
+        backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #ffffff !important;
+        font-size: 0.9rem !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .card-icon-btn.active {
+        background: rgba(170, 0, 255, 0.8) !important;
+        border-color: #aa00ff !important;
+    }
+    
+    .card-icon-btn.favorite-btn.active {
+        color: #ff0055 !important;
+    }
+    
+    .card-icon-btn.watchlist-btn.active {
+        color: #ff9500 !important;
+    }
+    
+    /* ===== CARD FOOTER (TITLE + YEAR) - BELOW CARD ===== */
+    .card-footer {
+        position: relative !important;
+        padding: 8px 4px !important;
+        background: transparent !important;
+    }
+    
+    .movie-card h3 {
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        margin: 0 0 4px 0 !important;
+        color: #ffffff !important;
+        line-height: 1.3 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+    }
+    
+    .movie-card p {
+        font-size: 0.75rem !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 !important;
+    }
+    
+    /* ===== HIDE DESKTOP ELEMENTS ON MOBILE ===== */
+    .navbar-signup-btn,
+    .user-menu,
+    .social-icons,
+    .download-app-btn {
+        display: none !important;
+    }
+    
+    /* ===== MOBILE NAV (IF EXISTS) ===== */
+    .mobile-nav {
+        display: none !important; /* Hide hamburger menu */
+    }
+}

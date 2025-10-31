@@ -1,0 +1,24 @@
+/* Section Headers - Clean Text Only (No Background) */
+.section-header {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 2rem 0 1.5rem 0;
+    padding: 0;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: left;
+}
+
+.movies-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 2rem 0 1.5rem 0;
+    padding: 0;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: left;
+}

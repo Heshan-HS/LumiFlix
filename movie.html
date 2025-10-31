@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIEVERSE HUB - Movie Details</title>
+
+    <!-- Dynamic SEO Meta Tags (to be updated by JavaScript) -->
+    <meta id="meta-description" name="description" content="Details about the movie, including cast, plot, and download links.">
+    <meta id="meta-keywords" name="keywords" content="movie, film, details, download">
+    <link id="canonical-link" rel="canonical" href="" />
+
+    <!-- Dynamic Open Graph / Facebook Tags -->
+    <meta property="og:type" content="video.movie">
+    <meta id="og-url" property="og:url" content="">
+    <meta id="og-title" property="og:title" content="MOVIEVERSE HUB - Movie Details">
+    <meta id="og-description" property="og:description" content="Explore movie details on MOVIEVERSE HUB.">
+    <meta id="og-image" property="og:image" content="">
+
+    <!-- Dynamic Twitter Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta id="twitter-url" property="twitter:url" content="">
+    <meta id="twitter-title" property="twitter:title" content="MOVIEVERSE HUB - Movie Details">
+    <meta id="twitter-description" property="twitter:description" content="Explore movie details on MOVIEVERSE HUB.">
+    <meta id="twitter-image" property="twitter:image" content="">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.4">
+    <link rel="stylesheet" href="auth.css?v=1.0">
+    <link rel="stylesheet" href="mobile-movie-details.css?v=1.4&t=20251031151530">
+    <link rel="stylesheet" href="mobile-sidebar.css?v=1.3&t=20251031164600">
+    <link rel="stylesheet" href="favorites.css?v=1.0">
+    
+    <!-- SIDEBAR SCRIPT - Same as index.html -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 SIDEBAR SCRIPT LOADED (Movie Page v2.0)');
+            
+            const hamburger = document.querySelector('.hamburger-menu');
+            const sidebar = document.getElementById('mobile-nav');
+            const backdrop = document.getElementById('mobile-nav-backdrop');
+            const closeBtn = document.getElementById('mobile-nav-close');
+            
+            console.log('Elements check:');
+            console.log('- Hamburger:', hamburger ? 'YES ✅' : 'NO ❌');
+            console.log('- Sidebar:', sidebar ? 'YES ✅' : 'NO ❌');
+            console.log('- Backdrop:', backdrop ? 'YES ✅' : 'NO ❌');
+            console.log('- Close button:', closeBtn ? 'YES ✅' : 'NO ❌');
+            
+            if (hamburger && sidebar && backdrop) {
+                hamburger.addEventListener('click', function(e) {
+                    console.log('🔥 HAMBURGER CLICKED!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    sidebar.classList.add('active');
+                    backdrop.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    console.log('✅ Sidebar opened!');
+                });
+                
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function(e) {
+                        console.log('❌ CLOSE CLICKED!');
+                        e.preventDefault();
+                        sidebar.classList.remove('active');
+                        backdrop.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                if (backdrop) {
+                    backdrop.addEventListener('click', function() {
+                        console.log('🎭 BACKDROP CLICKED!');
+                        sidebar.classList.remove('active');
+                        backdrop.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                        console.log('⌨️ ESCAPE KEY!');
+                        sidebar.classList.remove('active');
+                        backdrop.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                console.log('✅ All event listeners attached!');
+            } else {
+                console.error('❌ FAILED: Missing elements!');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Hamburger Menu Button (Mobile) -->
+    <button class="hamburger-menu" aria-label="Open navigation menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Backdrop Overlay -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    
+    <!-- Professional Mobile Sidebar -->
+    <div class="mobile-nav" id="mobile-nav">
+        <!-- Header -->
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo-link">
+                <img src="ff.png" alt="LumiFlix Logo" class="logo-image">
+                <span class="logo-text">LumiFlix</span>
+            </a>
+            <button class="close-btn" id="mobile-nav-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav class="mobile-nav-main">
+            <a href="index.html" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="trending.html" class="mobile-nav-link">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </a>
+            <a href="top-imdb.html" class="mobile-nav-link">
+                <i class="fas fa-star"></i>
+                <span>Top IMDb</span>
+            </a>
+            <a href="my-account.html" class="mobile-nav-link">
+                <i class="fas fa-user"></i>
+                <span>My Account</span>
+            </a>
+            <a href="favorites.html" class="mobile-nav-link">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+            <a href="watchlist.html" class="mobile-nav-link">
+                <i class="fas fa-bookmark"></i>
+                <span>Watchlist</span>
+            </a>
+            <a href="contact.html" class="mobile-nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </nav>
+        
+        <!-- Categories Section -->
+        <div class="mobile-nav-section">
+            <div class="mobile-nav-section-title">
+                <i class="fas fa-th-large"></i>
+                <span>CATEGORIES</span>
+            </div>
+            <div class="mobile-genres-grid">
+                <a href="genre.html?genre=Action" class="mobile-genre-btn">
+                    <i class="fas fa-fist-raised"></i>
+                    <span>Action</span>
+                </a>
+                <a href="genre.html?genre=Adventure" class="mobile-genre-btn">
+                    <i class="fas fa-hiking"></i>
+                    <span>Adventure</span>
+                </a>
+                <a href="genre.html?genre=Comedy" class="mobile-genre-btn">
+                    <i class="fas fa-laugh"></i>
+                    <span>Comedy</span>
+                </a>
+                <a href="genre.html?genre=Drama" class="mobile-genre-btn">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Drama</span>
+                </a>
+                <a href="genre.html?genre=Horror" class="mobile-genre-btn">
+                    <i class="fas fa-ghost"></i>
+                    <span>Horror</span>
+                </a>
+                <a href="genre.html?genre=Sci-Fi" class="mobile-genre-btn">
+                    <i class="fas fa-rocket"></i>
+                    <span>Sci-Fi</span>
+                </a>
+                <a href="genre.html?genre=Romance" class="mobile-genre-btn">
+                    <i class="fas fa-heart"></i>
+                    <span>Romance</span>
+                </a>
+                <a href="genre.html?genre=Thriller" class="mobile-genre-btn">
+                    <i class="fas fa-user-secret"></i>
+                    <span>Thriller</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Download App Button -->
+        <div class="mobile-nav-section">
+            <a href="#" class="mobile-download-app-btn" id="mobile-download-app">
+                <i class="fas fa-download"></i>
+                <span>Download App</span>
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="mobile-nav-footer">
+            <div class="mobile-social-links">
+                <a href="https://www.facebook.com/profile.php?id=61572311634973" target="_blank" class="mobile-social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://t.me/Heshan67hh" target="_blank" class="mobile-social-link" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="mailto:heshansathyanga479@gmail.com" class="mobile-social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="mobile-footer-text">© 2024 LumiFlix. All rights reserved.</p>
+        </div>
+    </div>
+
+        <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <a href="index.html" class="logo-link">
+                <img src="ff.png" alt="Cinevix Logo" class="logo-image">
+                <span class="logo-text">LumiFlix</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> <span class="link-text">Home</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="fas fa-th-large"></i> <span class="link-text">Categories</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu" id="genre-list">
+                        <!-- Genres will be populated by JavaScript -->
+                    </ul>
+                </li>
+                <li><a href="trending.html"><i class="fas fa-fire"></i> <span class="link-text">Trending</span></a></li>
+                <li><a href="top-imdb.html"><i class="fas fa-star"></i> <span class="link-text">Top IMDb</span></a></li>
+                <li><a href="index.html#my-account"><i class="fas fa-user"></i> <span class="link-text">My Account</span></a></li>
+                <li><a href="index.html#contact"><i class="fas fa-envelope"></i> <span class="link-text">Contact</span></a></li>
+            </ul>
+            <div class="navbar-right">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61572311634973" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://t.me/Heshan67hh" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="mailto:heshansathyanga479@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="#" class="navbar-signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+        </header>
+        <div id="movie-detail-content"></div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration & Data Loader -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Authentication Scripts -->
+    <script src="auth-web.js?v=2.2"></script>
+    <script src="auth-ui.js?v=1.6"></script>
+    
+    <!-- Favorites & Watchlist Scripts -->
+    <script src="favorites-web.js?v=1.7"></script>
+    <script src="favorites-ui.js?v=1.0"></script>
+    
+    <!-- Scripts -->
+    <script src="script.js?v=2.0"></script>
+    <script src="movie-page.js?v=1.6&t=20251031150700"></script>
+    <script src="mobile-movie-inline.js?t=20251031150500"></script>
+</body>
+</html>
+
+    <!-- Trailer Modal -->
+    <div id="trailer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="video-container">
+                <iframe id="trailer-iframe" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

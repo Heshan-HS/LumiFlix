@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d0c22;
+            color: white;
+        }
+        
+        /* Hamburger Button */
+        .hamburger-menu {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #667eea;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10001;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+        }
+        
+        /* Backdrop */
+        .mobile-nav-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .mobile-nav-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Sidebar */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1933 0%, #0d0c22 100%);
+            z-index: 9999;
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .mobile-nav.active {
+            left: 0;
+        }
+        
+        .close-btn {
+            align-self: flex-end;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            margin: 20px 0;
+            color: #667eea;
+        }
+        
+        .test-content {
+            padding: 100px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Button -->
+    <button class="hamburger-menu" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Backdrop -->
+    <div class="mobile-nav-backdrop" id="backdrop"></div>
+    
+    <!-- Sidebar -->
+    <div class="mobile-nav" id="sidebar">
+        <button class="close-btn" id="closeBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>🎬 Test Sidebar</h2>
+        <p>If you can see this, the sidebar is working!</p>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="test-content">
+        <h1>Sidebar Test Page</h1>
+        <p>Click the purple button in the top left to test the sidebar.</p>
+        <p>Check the console (F12) for debug messages.</p>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        console.log('🚀 TEST PAGE LOADED');
+        
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('backdrop');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        console.log('Elements found:');
+        console.log('- Hamburger:', hamburger ? 'YES ✅' : 'NO ❌');
+        console.log('- Sidebar:', sidebar ? 'YES ✅' : 'NO ❌');
+        console.log('- Backdrop:', backdrop ? 'YES ✅' : 'NO ❌');
+        console.log('- Close button:', closeBtn ? 'YES ✅' : 'NO ❌');
+        
+        if (hamburger && sidebar && backdrop) {
+            hamburger.addEventListener('click', function() {
+                console.log('🔥 HAMBURGER CLICKED!');
+                sidebar.classList.add('active');
+                backdrop.classList.add('active');
+                console.log('Sidebar classes:', sidebar.classList.toString());
+            });
+            
+            closeBtn.addEventListener('click', function() {
+                console.log('❌ CLOSE CLICKED!');
+                sidebar.classList.remove('active');
+                backdrop.classList.remove('active');
+            });
+            
+            backdrop.addEventListener('click', function() {
+                console.log('🎭 BACKDROP CLICKED!');
+                sidebar.classList.remove('active');
+                backdrop.classList.remove('active');
+            });
+            
+            console.log('✅ Event listeners attached!');
+        } else {
+            console.error('❌ FAILED: Missing elements!');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Special Download App Button Styling */
+.download-app-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #aa00ff, #00aaff) !important;
+    color: #ffffff !important;
+    padding: 8px 20px !important;
+    margin-top: 0px;
+    margin-bottom: 12px !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+    box-shadow: 0 4px 15px rgba(170, 0, 255, 0.4), 0 0 20px rgba(0, 170, 255, 0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+    animation: pulseGlow 2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none !important;
+    align-self: center !important;
+    transform: translateY(-2px) !important;
+}
+
+.download-app-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s ease-in-out infinite;
+}
+
+.download-app-btn:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 6px 25px rgba(170, 0, 255, 0.6), 0 0 30px rgba(0, 170, 255, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.download-app-btn i {
+    margin-right: 8px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(170, 0, 255, 0.4), 0 0 20px rgba(0, 170, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(170, 0, 255, 0.6), 0 0 35px rgba(0, 170, 255, 0.5);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -50%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Make it stand out in the menu */
+.nav-menu li:has(.download-app-btn) {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(170, 0, 255, 0.2);
+}

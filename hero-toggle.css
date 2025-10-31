@@ -1,0 +1,4 @@
+/* Hero Section Toggle Class */
+.hero-hidden {
+    display: none !important;
+}

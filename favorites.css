@@ -1,0 +1,367 @@
+/* Favorites & Watchlist CSS Styling */
+/* Professional design matching app theme */
+
+/* Simple Page Title */
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 3rem 2rem 1rem 2rem;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+    width: calc(100% - 4rem);
+    text-align: left;
+}
+
+/* Movie Card Icons (Favorites & Watchlist) */
+.movie-card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    display: flex;
+    gap: 8px;
+}
+
+.favorite-btn,
+.watchlist-btn {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0 !important;
+}
+
+.favorite-btn:hover,
+.watchlist-btn:hover {
+    transform: scale(1.2);
+}
+
+.favorite-icon,
+.watchlist-icon {
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Favorite icon states */
+.favorite-icon.fas {
+    color: #ff4757;
+}
+
+.favorite-icon.far {
+    color: #ffffff;
+}
+
+.favorite-btn:hover .favorite-icon {
+    color: #ff4757;
+}
+
+/* Watchlist icon states */
+.watchlist-icon.fas {
+    color: #ffa502;
+}
+
+.watchlist-icon.far {
+    color: #ffffff;
+}
+
+.watchlist-btn:hover .watchlist-icon {
+    color: #ffa502;
+}
+
+/* Hide JS-created buttons on favorites/watchlist pages to prevent duplicates */
+.card-action-icons {
+    display: none !important;
+}
+
+/* Toast Notifications */
+.favorites-toast {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, rgba(26, 28, 47, 0.98), rgba(15, 17, 30, 0.98));
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+}
+
+.favorites-toast.active {
+    transform: translateX(0);
+}
+
+.favorites-toast.success {
+    border-left: 4px solid #4caf50;
+}
+
+.favorites-toast.error {
+    border-left: 4px solid #ff4757;
+}
+
+.favorites-toast i {
+    font-size: 1.5rem;
+}
+
+.favorites-toast.success i {
+    color: #4caf50;
+}
+
+.favorites-toast.error i {
+    color: #ff4757;
+}
+
+.favorites-toast span {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+/* Favorites/Watchlist Pages */
+.favorites-page-header {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(170, 0, 255, 0.1), rgba(0, 212, 255, 0.1));
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.favorites-page-header h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.favorites-page-header p {
+    color: var(--light-secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Empty State */
+.favorites-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 3rem;
+}
+
+.favorites-empty-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, rgba(170, 0, 255, 0.1), rgba(0, 212, 255, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.favorites-empty-icon i {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.favorites-empty-state h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.favorites-empty-state p {
+    color: var(--light-secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.favorites-empty-btn {
+    background: var(--gradient-primary);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(170, 0, 255, 0.3);
+}
+
+.favorites-empty-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(170, 0, 255, 0.5);
+}
+
+/* Movies Grid */
+.favorites-movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* Stats Bar */
+.favorites-stats {
+    background: linear-gradient(135deg, rgba(26, 28, 47, 0.8), rgba(15, 17, 30, 0.8));
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.favorites-stat {
+    text-align: center;
+}
+
+.favorites-stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.favorites-stat-label {
+    color: var(--light-secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Loading State */
+.favorites-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 1.5rem;
+}
+
+.favorites-loading i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+.favorites-loading p {
+    color: var(--light-secondary-color);
+    font-size: 1.1rem;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* User Menu Integration */
+.auth-user-menu-item.favorites-link,
+.auth-user-menu-item.watchlist-link {
+    cursor: pointer;
+}
+
+.auth-user-menu-item.favorites-link:hover,
+.auth-user-menu-item.watchlist-link:hover {
+    background: rgba(170, 0, 255, 0.1);
+}
+
+.auth-user-menu-badge {
+    background: var(--gradient-primary);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    margin-left: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .favorites-movies-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .favorites-page-header h1 {
+        font-size: 2rem;
+    }
+
+    .favorites-movies-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+
+    .favorites-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .favorites-toast {
+        right: 1rem;
+        left: 1rem;
+        top: 1rem;
+    }
+
+    .movie-card-actions {
+        gap: 6px;
+    }
+
+    .favorite-btn,
+    .watchlist-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .favorite-icon,
+    .watchlist-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .favorites-movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie-card-actions {
+        top: 6px;
+        right: 6px;
+        gap: 4px;
+    }
+
+    .favorite-btn,
+    .watchlist-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .favorite-icon,
+    .watchlist-icon {
+        font-size: 0.9rem;
+    }
+}
