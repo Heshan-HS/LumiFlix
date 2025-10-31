@@ -34,6 +34,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Setup event listeners
         setupEventListeners();
+        
+        // Auto-trigger Home button click on initial load (ensures data displays)
+        setTimeout(() => {
+            const homeButton = document.querySelector('.nav-menu a[href="index.html"]');
+            if (homeButton && window.location.pathname.endsWith('index.html')) {
+                console.log('🏠 Auto-clicking Home button to ensure data loads...');
+                homeButton.click();
+            }
+        }, 500); // Small delay to ensure everything is initialized
     } catch (error) {
         console.error('❌ Error loading movies:', error);
         if (mainContent) {
