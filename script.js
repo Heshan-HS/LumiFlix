@@ -9,10 +9,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Wait for Firebase movies to load
-        console.log('⏳ Waiting for Firebase movies...');
-        await waitForMovies();
-        console.log('✅ Movies loaded, initializing page...');
+        // Check if movies are already loaded (race condition fix)
+        if (typeof moviesLoaded !== 'undefined' && moviesLoaded && movieList && movieList.length > 0) {
+            console.log('✅ Movies already loaded, initializing page immediately...');
+        } else {
+            // Wait for Firebase movies to load
+            console.log('⏳ Waiting for Firebase movies...');
+            await waitForMovies();
+            console.log('✅ Movies loaded, initializing page...');
+        }
 
         // Ensure movieList is loaded
         if (typeof movieList === 'undefined' || !movieList || movieList.length === 0) {
