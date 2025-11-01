@@ -422,10 +422,10 @@ function displayAllMovies() {
     const recommendedMoviesGrid = document.getElementById('recommended-movies-grid');
     const grids = [trendingGrid, newReleasesGrid, featuredMoviesGrid, recommendedMoviesGrid];
 
-    // Display skeleton loaders immediately
+    // Display skeleton loaders immediately (12 per section for 2 rows)
     grids.forEach(grid => {
         if (grid) {
-            const count = grid.id === 'featured-movies-grid' ? 12 : 6;
+            const count = grid.id === 'featured-movies-grid' ? 24 : 12;
             displaySkeletonLoaders(grid, count);
         }
     });
@@ -442,20 +442,21 @@ function displayAllMovies() {
                 return yearB - yearA; // Descending order (newest first)
             });
             
-            // Show top 6 newest movies
-            sortedByYear.slice(0, 6).forEach(movie => newReleasesGrid.appendChild(createMovieCard(movie)));
+            // Show top 12 newest movies (2 rows)
+            sortedByYear.slice(0, 12).forEach(movie => newReleasesGrid.appendChild(createMovieCard(movie)));
         }
         if (trendingGrid) {
             trendingGrid.innerHTML = '';
-            movieList.slice(6, 12).forEach(movie => trendingGrid.appendChild(createMovieCard(movie)));
+            // Show 12 trending movies (2 rows)
+            movieList.slice(12, 24).forEach(movie => trendingGrid.appendChild(createMovieCard(movie)));
         }
         if (featuredMoviesGrid) {
             featuredMoviesGrid.innerHTML = '';
 
             // Movies displayed in other sections
-            const newReleasesMovies = movieList.slice(0, 6);
-            const trendingMovies = movieList.slice(6, 12);
-            const recommendedMovies = movieList.slice(18, 24);
+            const newReleasesMovies = movieList.slice(0, 12);
+            const trendingMovies = movieList.slice(12, 24);
+            const recommendedMovies = movieList.slice(24, 36);
 
             const displayedMovies = [...newReleasesMovies, ...trendingMovies, ...recommendedMovies];
             const displayedMovieTitles = new Set(displayedMovies.map(movie => movie.title));
@@ -468,7 +469,8 @@ function displayAllMovies() {
         }
         if (recommendedMoviesGrid) {
             recommendedMoviesGrid.innerHTML = '';
-            const recommendedMovies = movieList.slice(18, 24);
+            // Show 12 recommended movies (2 rows)
+            const recommendedMovies = movieList.slice(24, 36);
             recommendedMovies.forEach(movie => recommendedMoviesGrid.appendChild(createMovieCard(movie)));
         }
     }, 1500); // 1.5 second delay
