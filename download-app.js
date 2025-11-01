@@ -2,7 +2,7 @@
 console.log('📱 Download App script loaded');
 
 document.addEventListener('DOMContentLoaded', () => {
-    const downloadLinks = document.querySelectorAll('.download-app-btn, #download-app-link, .mobile-download-app-btn, #mobile-download-app');
+    const downloadLinks = document.querySelectorAll('.download-app-btn, #download-app-link, .mobile-download-app-btn, #mobile-download-app, #download-app-footer');
     
     downloadLinks.forEach(link => {
         link.addEventListener('click', (e) => {
