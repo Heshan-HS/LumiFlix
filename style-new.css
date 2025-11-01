@@ -575,6 +575,7 @@ header {
     position: relative;
     width: 40%; /* Wider search bar */
     max-width: 502px; /* Reduced by 8px */
+    margin-top: 30px; /* Move search bar 10px down */
 }
 
 .search-bar input {
